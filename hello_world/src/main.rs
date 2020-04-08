@@ -1,7 +1,14 @@
 extern crate time;
 
-fn main() {
+fn print_today() {
+    const THE_1900: i32 = 1900; 
     let d = time::now();
-    println!("Today is {}/{}/{}", d.tm_mday,
-    d.tm_mon, d.tm_year + 1900);
+    let day: i32 = d.tm_mday;
+    let month: i32 = d.tm_mon;
+    let year: i32 = d.tm_year + THE_1900;
+    println!("Today is {}/{}/{}", day, month, year);
+}
+
+fn main() {
+    print_today();
 }
