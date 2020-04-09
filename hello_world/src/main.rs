@@ -9,6 +9,11 @@ fn print_today() {
     println!("Today is {}/{}/{}", day, month, year);
 }
 
+fn to_do_something(function: fn()){
+    function()
+}
+
 fn main() {
-    print_today();
+    let pointer_to_function: fn() = print_today;
+    to_do_something(pointer_to_function)
 }
